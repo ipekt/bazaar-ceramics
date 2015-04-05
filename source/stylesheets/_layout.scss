@@ -1,0 +1,22 @@
+$susy: (
+	columns: 12,
+	gutters: 1/4,
+	container: 70em
+);
+
+$susy: (
+  debug: (
+    image: show,
+    color: grey,
+    output: background,
+    toggle: top right,
+  ),
+);
+
+.banner {
+	@include container(70em);
+}
+
+.product-catalog {
+	@include container(70em);
+}
