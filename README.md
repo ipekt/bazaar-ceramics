@@ -6,6 +6,7 @@ This is my assignment for Project Theory (ICA40311 – Certificate IV in Web-Bas
 
 
 Deliverables:	
+
 1.	Mark up a static website (HTML/CSS and JS as appropriate) to meet the functional and technical requirements for Bazaar Ceramics as determined by your research and discussions with the client. The design must also be guided by your content audit, determined site map and wireframes you have prepared.
 
 2.	The website must have a products list page with a table containing the product name, product id, price, and product image thumbnails. Also add placeholder images for (paypal) ‘buy now’ or ‘add to shopping cart’ buttons to the table.
