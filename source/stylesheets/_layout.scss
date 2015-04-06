@@ -1,22 +1,230 @@
 $susy: (
-	columns: 12,
-	gutters: 1/4,
-	container: 70em
-);
-
-$susy: (
+	columns: 9,
+	gutters: 1/6,
   debug: (
-    image: show,
-    color: grey,
-    output: background,
+    image: hide,
+    color: $purple,
+    output: image,
     toggle: top right,
   ),
 );
 
-.banner {
-	@include container(70em);
+header, footer, main {
+  @include container(100%);
+  padding: 2% 0;
+  font-family: $fontfamily;
+}
+
+header, footer {
+   background-color: $black;
+   color: $white; //doesnt work on its own
+}
+
+header {
+  border-bottom: 5px solid $light-yellow;
+}
+
+footer {
+  border-top: 5px solid $light-yellow;
+  padding: 2%;
+}
+
+main {
+  @include container(80%);
+  background-color: $white;
+}
+ 
+header nav {
+  @include clearfix;
+  .account {
+    @include span(2);
+    @include clearfix;
+    float: right;  
+    text-align: justify;
+    text-transform: uppercase;
+    li {
+      display: inline-block;
+      a {
+        color: $white;
+        text-decoration: none;
+        text-align: center;
+        display: inline-block;
+        font-size: 1em;
+        margin-right: 1.25em;
+        margin-bottom: 1em;
+        img {
+          width: 25px;
+          display: inline-block;
+          margin-right: 1em;
+        }
+      }
+    }
+  }
+  .menu {  // how to center it
+    @include span(7 at 2 of 9);
+    text-align: center;
+    text-transform: uppercase;
+    li {
+      display: inline-block;
+      a {
+        color: $white;
+        text-decoration: none;
+        text-align: center;
+        display: inline-block;
+        font-size: 1.25em;
+        margin-right: 2em;
+        img {
+          width: 40px;
+          display: inline-block;
+          margin-right: 1em;
+        }
+      }
+    }
+  }
+  .social-media {
+    @include span(2 at 8 of 9);
+    float: right;
+    @include clearfix;
+    li {
+      display: inline-block;
+      a {
+        text-align: center;
+        display: inline-block;
+        img {
+          width: 30px;
+          display: inline-block;
+          margin-right: 0.5em;
+        }
+      }
+    }
+  }
+}
+
+.design-process {
+  @include backImage('../images/ban.jpg');
+  @include display-flex();  //learn what these do?
+  @include align-items(center);
+  @include justify-content(center);
+  height: 450px;
+  margin-bottom: 5%;
+  h1 {
+    color: $white;
+    font-size: 5em;
+    // font-weight: $heavy;
+    line-height: .8em;
+    @include text-shadow($black 0 0 20px);
+    text-align: center;
+  }
+  a {
+    color: $white;
+    line-height: .8em;
+    text-decoration: none;
+  }
+  // p {
+  //   background-color: $white;
+  //   padding: 5%;
+  //   font-size: 2em;
+  //   text-align: center;
+  //   display: block;
+  //   @include span(5 at 4 of 9);
+  // }
+  // .button {
+  // padding: 1%;
+  // background-color: $yellow;
+  // }
+}
+
+.creativity {
+  height: 350px;
+  img {
+    display: inline-block;
+    @include span(4 of 9);
+    height: 400px;
+  }
+  section {
+    display: inline-block;
+    @include span(5 at 4 of 9 last);
+    background-color: $black;
+    height: 400px;
+    h1 {
+      font-size: 3em;
+      text-align: center;
+      color: $white;
+      line-height: 3em;
+      margin-top: 5%;
+    }
+    p {
+      font-size: 1.5em;
+      text-align: center;
+      color: $white;
+      a {
+        color: $yellow;
+      }
+    }
+  }
 }
 
 .product-catalog {
-	@include container(70em);
+  @include container(100%);
 }
+
+.product-list-item {
+  @include gallery(3 of 9);
+}
+
+.product-list-item img {
+  @include container(100%);
+  // max-height: 40%;
+}
+
+// .button {
+//   float: right;
+// }
+
+footer {
+  .footer-nav {
+    height: 100%;
+    @include span(first 6 of 9);
+    margin-left: span(1 of 6); 
+    .nav-sections {
+      @include span(1 of 6);
+      height: 175px;
+      h3 {
+        text-transform: uppercase;
+        line-height: 2.5em;
+        ont-size: 1.1em;
+      }
+      a {
+        color: $white;
+        text-decoration: none;
+        text-align: center;
+        line-height: 2em;
+        font-size: 0.9em;
+      }
+    }
+  }
+  .social-media {
+    @include span(last 3 of 9);
+    float: right;
+    @include clearfix;
+    li {
+      display: inline-block;
+      a {
+        text-align: center;
+        display: inline-block;
+        img {
+          width: 30px;
+          display: inline-block;
+          margin-right: 0.5em;
+        }
+      }
+    }
+  }
+  .copyright { // cant get it to bottom.
+    text-align: center;
+    background-color: $yellow;
+    @include span(9 of 9);
+  }
+}
+    
+    

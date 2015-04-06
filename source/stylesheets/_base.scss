@@ -1,16 +1,2 @@
-//font background nav 
 
-// navigation //
 
-nav {
-	list-style-type: none;
-	@include container(75%);
-}
-
-nav ul li {
-	text-decoration: none;
-	display: inline-block;
-	text-transform: uppercase;
-	margin-right: 5%;
-
-}

@@ -1,3 +1,22 @@
+
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  } //before, after
+  &:after {
+    clear: both;
+  } //after
+} //clearfix
+
+@mixin links {
+  text-decoration: none;
+  display: block;
+  list-style-type:none;
+}
+
 @mixin backImage(
   $image,
   $grDir: to bottom,
@@ -17,14 +36,3 @@
   -o-background-size: cover;
   background-size: cover;
 } //backImage
-
-@mixin clearfix {
-  &:before,
-  &:after {
-    content: '';
-    display: table;
-  } //before, after
-  &:after {
-    clear: both;
-  } //after
-} //clearfix
