@@ -38,8 +38,8 @@ header nav {
   @include clearfix;
   .account {
     @include span(2);
-    @include clearfix;
     float: right;  
+    clear: both;
     text-align: justify;
     text-transform: uppercase;
     li {
@@ -60,8 +60,26 @@ header nav {
       }
     }
   }
+  .social-media {
+    @include span(2);
+    float: left;
+    padding-left: 2%;
+    li {
+      display: inline-block;
+      a {
+        text-align: right;
+        display: inline-block;
+        img {
+          width: 40px;
+          display: inline-block;
+          margin-right: 0.5em;
+        }
+      }
+    }
+  }
   .menu {  // how to center it
-    @include span(7 at 2 of 9);
+    @include span(9);
+    // margin-left: span(1 of 9);
     text-align: center;
     text-transform: uppercase;
     li {
@@ -77,23 +95,6 @@ header nav {
           width: 40px;
           display: inline-block;
           margin-right: 1em;
-        }
-      }
-    }
-  }
-  .social-media {
-    @include span(2 at 8 of 9);
-    float: right;
-    @include clearfix;
-    li {
-      display: inline-block;
-      a {
-        text-align: center;
-        display: inline-block;
-        img {
-          width: 30px;
-          display: inline-block;
-          margin-right: 0.5em;
         }
       }
     }
@@ -184,10 +185,10 @@ header nav {
 footer {
   .footer-nav {
     height: 100%;
-    @include span(first 6 of 9);
-    margin-left: span(1 of 6); 
+    @include span(first 5 of 9);
+    margin-left: span(1 of 5); 
     .nav-sections {
-      @include span(1 of 6);
+      @include span(1 of 5);
       height: 175px;
       h3 {
         text-transform: uppercase;
@@ -203,9 +204,19 @@ footer {
       }
     }
   }
+  .payment {
+    @include span(1 of 9);
+    background-color: $white;
+    float: left;
+    padding-right: 2%;
+    margin-bottom: 2%;
+    img {
+      width: 100%;
+    }
+  }
   .social-media {
-    @include span(last 3 of 9);
-    float: right;
+    @include span(last 2 of 9);
+    float: left;
     @include clearfix;
     li {
       display: inline-block;
@@ -220,10 +231,11 @@ footer {
       }
     }
   }
+
   .copyright { // cant get it to bottom.
     text-align: center;
-    background-color: $yellow;
     @include span(9 of 9);
+    padding-top: 2%;
   }
 }
     
