@@ -2,22 +2,34 @@
 title: Bazaar Ceramics Contact Us
 layout: layout
 ---
-<h1>Contact Us</h1>
-<p>See our orders section for making orders. If you have any other enquiries, please use the form below. We will respond to your request by the next working day.</p>
 
-<h2>Mailing Address</h2>
+<article class="contact-us">
+	<h1>Contact Us</h1>
+	<!-- <img src="../images/prod12.jpg" alt=""> -->
+	<p>See our orders section for making orders. If you have any other enquiries, please use the form below. We will respond to your request by the next working day.</p>
 
-<address>123 Main Street
-City, ST 00000</address>
+	<h2>Mailing Address</h2>
 
-<h2>Hours of Operation</h2>
+	<address>123 Main Street
+	City, ST 00000</address>
 
-<p>Monday - Friday 09:00 a.m. - 06:00 p.m.</p>
-<p>Closed Saturday and Sunday</p>
+	<h2>Hours of Operation</h2>
+
+	<p>Monday - Friday 09:00 a.m. - 06:00 p.m.</p>
+	<p>Closed Saturday and Sunday</p>
+</article>
+
+<div id="map-canvas"></div>
 
 <form action="#">
-	<label>Full Name: <input type="text" max-length="50"></label>
-	<label>Email Address: <input type="email" max-length="30"></label>
-	<label>Your Request<textarea name="comment" rows="3" columns="5"></textarea></label>
+		<label class="desc" for="full-name">Full Name</label>
+		<input type="text" size="8" name="full-name"tabindex="1">
+	
+		<label class="desc" for="email">Email</label>
+		<input type="email" name="email" value="" tabindex="3" max-length="255">
+		
+		<label class="desc" for="message">Message</label>
+		<textarea spellcheck="true" name="message" rows="10" columns="50" tabindex="4"></textarea>
+
 </form>
 

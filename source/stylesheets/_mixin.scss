@@ -11,9 +11,9 @@
   } //after
 } //clearfix
 
-@mixin links {
+@mixin linkStyle {
   text-decoration: none;
-  display: block;
+  display: inline-block;
   list-style-type:none;
 }
 
@@ -36,3 +36,8 @@
   -o-background-size: cover;
   background-size: cover;
 } //backImage
+
+@mixin box-sizing($value) {
+-moz-box-sizing: $value;
+box-sizing: $value;
+}

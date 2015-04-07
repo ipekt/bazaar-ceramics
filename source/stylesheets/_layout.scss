@@ -8,132 +8,127 @@ $susy: (
     toggle: top right,
   ),
 );
+// set border boxing global
+@include global-box-sizing(border-box);
 
-header, footer, main {
+
+// general layout header & footer
+header, footer {
   @include container(100%);
   padding: 2% 0;
   font-family: $fontfamily;
+  background-color: $black;
+  color: $white; //doesnt work on its own
 }
 
-header, footer {
-   background-color: $black;
-   color: $white; //doesnt work on its own
-}
-
-header {
-  border-bottom: 5px solid $light-yellow;
-}
-
-footer {
-  border-top: 5px solid $light-yellow;
-  padding: 2%;
-}
+// general layout main
 
 main {
   @include container(80%);
   background-color: $white;
+  padding: 1% 0 2% 0;
+  font-family: $fontfamily;
 }
- 
-header nav {
-  @include clearfix;
-  .account {
-    @include span(2);
-    float: right;  
-    clear: both;
-    text-align: justify;
-    text-transform: uppercase;
-    li {
-      display: inline-block;
-      a {
-        color: $white;
-        text-decoration: none;
-        text-align: center;
+
+//header - main navigation 
+
+header {
+  border-bottom: 5px solid $light-yellow;
+  nav {
+    @include clearfix;
+    .account {
+      // @include span(2);
+      float: right;  
+      clear: both;
+      text-align: justify;
+      text-transform: uppercase;
+      li {
         display: inline-block;
-        font-size: 1em;
-        margin-right: 1.25em;
-        margin-bottom: 1em;
-        img {
-          width: 25px;
+        a {
+          color: $white;
+          text-decoration: none;
+          text-align: center;
           display: inline-block;
-          margin-right: 1em;
+          font-size: 1em;
+          margin-right: 1.25em;
+          margin-bottom: 1em;
+          img {
+            width: 25px;
+            min-width: 20px;
+            display: inline-block;
+            margin-right: 1em;
+          }
+        }
+      }
+    }
+    .social-media {
+      // @include span(2);
+      float: left;
+      padding-left: 2%;
+      li {
+        display: inline-block;
+        a {
+          text-align: right;
+          display: inline-block;
+          img {
+            width: 40px;
+            display: inline-block;
+            margin-right: 0.5em;
+          }
+        }
+      }
+    }
+    .menu {  
+      @include span(9);  // taking whole row this way it is centered
+      text-align: center; 
+      text-transform: uppercase;
+      // @include breakpoint()
+      li {
+        display: inline-block;
+        a {
+          color: $white;
+          text-decoration: none;
+          text-align: center;
+          display: inline-block;
+          font-size: 1.25em;
+          margin-right: 2em;
+          img {
+            width: 40px;
+            display: inline-block;
+            margin-right: 1em;
+          }
         }
       }
     }
   }
-  .social-media {
-    @include span(2);
-    float: left;
-    padding-left: 2%;
-    li {
-      display: inline-block;
-      a {
-        text-align: right;
-        display: inline-block;
-        img {
-          width: 40px;
-          display: inline-block;
-          margin-right: 0.5em;
-        }
-      }
-    }
-  }
-  .menu {  // how to center it
-    @include span(9);
-    // margin-left: span(1 of 9);
-    text-align: center;
-    text-transform: uppercase;
-    li {
-      display: inline-block;
-      a {
-        color: $white;
-        text-decoration: none;
-        text-align: center;
-        display: inline-block;
-        font-size: 1.25em;
-        margin-right: 2em;
-        img {
-          width: 40px;
-          display: inline-block;
-          margin-right: 1em;
-        }
-      }
-    }
-  }
-}
+} 
+
+// design process article
 
 .design-process {
   @include backImage('../images/ban.jpg');
-  @include display-flex();  //learn what these do?
+  // @include display-flex();  //learn what these do?
   @include align-items(center);
   @include justify-content(center);
   height: 450px;
-  margin-bottom: 5%;
+  margin: 5% auto;
+  position: relative;
   h1 {
+    position: absolute;  // make h1 vertically aligned and flexible (parent =>pos:relative child=> pos:absolute top:36%)
+    display: block;
+    top: 36%;
     color: $white;
     font-size: 5em;
-    // font-weight: $heavy;
-    line-height: .8em;
     @include text-shadow($black 0 0 20px);
     text-align: center;
   }
   a {
     color: $white;
-    line-height: .8em;
     text-decoration: none;
   }
-  // p {
-  //   background-color: $white;
-  //   padding: 5%;
-  //   font-size: 2em;
-  //   text-align: center;
-  //   display: block;
-  //   @include span(5 at 4 of 9);
-  // }
-  // .button {
-  // padding: 1%;
-  // background-color: $yellow;
-  // }
 }
+
+// creativity article 
 
 .creativity {
   height: 350px;
@@ -147,14 +142,20 @@ header nav {
     @include span(5 at 4 of 9 last);
     background-color: $black;
     height: 400px;
+    position: relative;
     h1 {
+      position: absolute;
+      top: 20%;
+      left: 15%;
       font-size: 3em;
       text-align: center;
       color: $white;
       line-height: 3em;
-      margin-top: 5%;
     }
     p {
+      position: absolute;
+      top: 54%;
+      left: 14%;
       font-size: 1.5em;
       text-align: center;
       color: $white;
@@ -165,24 +166,64 @@ header nav {
   }
 }
 
+// product catalog style
+
 .product-catalog {
   @include container(100%);
+  .product-list-item {
+    @include gallery(3 of 9);
+    @include clearfix;
+    margin-bottom: 1.66%;
+    border: 1px solid grey;
+    img {
+      max-width: 100%;
+    }
+    .product-content {
+      padding: 5%;
+      border-top: 2px solid $light-yellow;
+      .product-name {
+        width: 100%;
+        display: block;
+        text-align: center;
+        color: $black;
+        font-size: 1.4em;
+        margin: 0.5% auto;
+        a {
+          text-decoration: none;
+        }
+      }
+      .product-price {
+        width: 100%;
+        display: block;
+        text-align: center;
+        font-size: 2em;
+        font-style: bold;
+      }
+    }
+  }
+  .button {
+    @include clearfix;
+    @include span(9);
+    text-align: right;
+    clear: both;  //solved position problem
+    margin-top: 2%;
+    margin-bottom: 2%;
+    a {
+      color: $white;
+      text-decoration: none;
+      background-color: $light-yellow;
+      padding: 1%;
+      font-size: 1.2em;
+    }
+  }
 }
 
-.product-list-item {
-  @include gallery(3 of 9);
-}
 
-.product-list-item img {
-  @include container(100%);
-  // max-height: 40%;
-}
-
-// .button {
-//   float: right;
-// }
+// footer style 
 
 footer {
+  border-top: 5px solid $light-yellow;
+  padding: 2%;
   .footer-nav {
     height: 100%;
     @include span(first 5 of 9);
@@ -234,9 +275,109 @@ footer {
 
   .copyright { // cant get it to bottom.
     text-align: center;
-    @include span(9 of 9);
+    @include span(9);
     padding-top: 2%;
   }
 }
+
+// contact 
+
+.contact-us {
+  @include span(first 6);
+  h1{
+    font-size: 2em;
+    color: $purple;
+    line-height: 3em;
+  }
+  p {
+  
+    font-size: 1.2em;
+    color: $black;
+    line-height: 1.2em;
+  }
+  h2 {
+    font-size: 1.4em;
+    color: $purple;
+    line-height: 1.2em;
+    padding: 2% 0;
+  }
+  address {
+    font-size: 1.2em;
+    color: $black;
+  }
+}
+
+#map-canvas {
+  @include span(last 3);
+  // width: 500px;
+  height: 360px;
+  background-color: #CCC;
+  border: 3px solid $purple;
+  margin-top: 5%;
+}
     
+form {
+  @include span(5);
+  margin: 5% auto;
+  label {
+    width: 25%;
+    float: left;
+    padding-right: 5%;
+    font-size: 1.2em;
+    // margin: 1% auto;
+  }
+  input[type=text], input[type=email], textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+  }
+}    
     
+.banner {
+  @include backImage('../images/plates.jpg');
+  @include display-flex();  //learn what these do?
+  @include align-items(center);
+  @include justify-content(center);
+  height: 450px;
+  margin: 5% auto;
+  position: relative;
+  h1 {
+    position: absolute;  // make h1 vertically aligned and flexible (parent =>pos:relative child=> pos:absolute top:36%)
+    display: block;
+    top: 40%;
+    left: 20%;
+    color: $white;
+    font-size: 5em;
+    @include text-shadow($black 0 0 20px);
+    text-align: center;
+  }
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+}
+
+.company {
+  @include span(first 6);
+  margin-left: gutter(1);
+  h1 {
+    font-size: 2em;
+    color: $purple;
+    line-height: 3em;
+  }
+  p {
+    padding: 1% 0;
+    font-size: 1.2em;
+    color: $black;
+    line-height: 1.2em;
+    text-align: justify;
+  }
+  h2 {
+    font-size: 1.4em;
+    color: $purple;
+    line-height: 1.2em;
+    padding: 2% 0;
+  }
+}
+.bazaar {
+  @include span(last 4);
+}

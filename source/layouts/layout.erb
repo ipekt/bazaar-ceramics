@@ -11,6 +11,28 @@
     
       <%= stylesheet_link_tag "style" %> 
    <!--  <%= javascript_include_tag  "all" %> -->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var myLatlng = new google.maps.LatLng(-33.881704, 151.199930);
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: myLatlng,
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        // var image = 'icons/bazaar-logo.png';
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+        var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        title: 'Bazaar Ceramics',
+        // icon: image
+  });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
   </head>
   
   <body class="<%= page_classes %>">
@@ -18,8 +40,8 @@
       <!-- <h1><a href="index.html"><img src="../icons/bazaar-logo.png" alt=""></a></h1> -->
       <nav>
         <ul class="account">
-          <li><a href=""><img src="../icons/user.png" alt="">My Account</a></li>
-          <li><a href=""><img src="../icons/shop.png" alt="">My Bag</a></li>
+          <li><a href=""><img src="../icons/user.png" alt=""><span>My Account</span></a></li>
+          <li><a href=""><img src="../icons/shop.png" alt=""><span>My Bag</span></a></li>
         </ul>
         <ul class="social-media">
           <li><a href=""><img src="../icons/fb.png" alt=""></a></img></li>
