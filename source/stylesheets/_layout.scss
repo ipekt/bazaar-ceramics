@@ -27,7 +27,7 @@ header{
     font-size: 1.3em;
     letter-spacing: 7px;
     text-align: center;
-    line-height: 2.55em;
+    line-height: 3.2em;
     border-bottom: 1px solid $border-color;
     img {
     width: 20px;
@@ -42,82 +42,75 @@ main {
   font-family: $fontfamily;
 }
 
+//product catalog style
+
+.product-catalog {
+  @include container(100%);
+  .product-list-item {
+    @include span(9);
+    margin: 1em auto;
+    border: 1px solid grey;
+    img {
+      max-width: 100%;
+    }
+  }
+}
 
 
 
 
 
-
-// header {
-//   border-bottom: 5px solid $light-yellow;
-//   nav {
+// .product-catalog {
+//   @include container(100%);
+//   .product-list-item {
+//     @include gallery(3 of 9);
 //     @include clearfix;
-//     .account {
-//       // @include span(2);
-//       float: right;  
-//       clear: both;
-//       text-align: justify;
-//       text-transform: uppercase;
-//       li {
-//         display: inline-block;
+//     margin-bottom: 1.66%;
+//     border: 1px solid grey;
+//     img {
+//       max-width: 100%;
+//     }
+//     .product-content {
+//       padding: 5%;
+//       border-top: 2px solid $light-yellow;
+//       .product-name {
+//         width: 100%;
+//         display: block;
+//         text-align: center;
+//         color: $black;
+//         font-size: 1.4em;
+//         margin: 0.5% auto;
 //         a {
-//           color: $white;
 //           text-decoration: none;
-//           text-align: center;
-//           display: inline-block;
-//           font-size: 1em;
-//           margin-right: 1.25em;
-//           margin-bottom: 1em;
-//           img {
-//             width: 25px;
-//             min-width: 20px;
-//             display: inline-block;
-//             margin-right: 1em;
-//           }
 //         }
 //       }
-//     }
-//     .social-media {
-//       // @include span(2);
-//       float: left;
-//       padding-left: 2%;
-//       li {
-//         display: inline-block;
-//         a {
-//           text-align: right;
-//           display: inline-block;
-//           img {
-//             width: 40px;
-//             display: inline-block;
-//             margin-right: 0.5em;
-//           }
-//         }
-//       }
-//     }
-//     .menu {  
-//       @include span(9);  // taking whole row this way it is centered
-//       text-align: center; 
-//       text-transform: uppercase;
-//       // @include breakpoint()
-//       li {
-//         display: inline-block;
-//         a {
-//           color: $white;
-//           text-decoration: none;
-//           text-align: center;
-//           display: inline-block;
-//           font-size: 1.25em;
-//           margin-right: 2em;
-//           img {
-//             width: 40px;
-//             display: inline-block;
-//             margin-right: 1em;
-//           }
-//         }
+//       .product-price {
+//         width: 100%;
+//         display: block;
+//         text-align: center;
+//         font-size: 2em;
+//         font-style: bold;
 //       }
 //     }
 //   }
-// } 
+//   .button {
+//     @include clearfix;
+//     @include span(9);
+//     text-align: right;
+//     clear: both;  //solved position problem
+//     margin-top: 2%;
+//     margin-bottom: 2%;
+//     a {
+//       color: $white;
+//       text-decoration: none;
+//       background-color: $light-yellow;
+//       padding: 1%;
+//       font-size: 1.2em;
+//     }
+//   }
+// }
+
+
 
 // // design process article
 
@@ -182,59 +175,7 @@ main {
 //   }
 // }
 
-// // product catalog style
-
-// .product-catalog {
-//   @include container(100%);
-//   .product-list-item {
-//     @include gallery(3 of 9);
-//     @include clearfix;
-//     margin-bottom: 1.66%;
-//     border: 1px solid grey;
-//     img {
-//       max-width: 100%;
-//     }
-//     .product-content {
-//       padding: 5%;
-//       border-top: 2px solid $light-yellow;
-//       .product-name {
-//         width: 100%;
-//         display: block;
-//         text-align: center;
-//         color: $black;
-//         font-size: 1.4em;
-//         margin: 0.5% auto;
-//         a {
-//           text-decoration: none;
-//         }
-//       }
-//       .product-price {
-//         width: 100%;
-//         display: block;
-//         text-align: center;
-//         font-size: 2em;
-//         font-style: bold;
-//       }
-//     }
-//   }
-//   .button {
-//     @include clearfix;
-//     @include span(9);
-//     text-align: right;
-//     clear: both;  //solved position problem
-//     margin-top: 2%;
-//     margin-bottom: 2%;
-//     a {
-//       color: $white;
-//       text-decoration: none;
-//       background-color: $light-yellow;
-//       padding: 1%;
-//       font-size: 1.2em;
-//     }
-//   }
-// }
-
-
+// 
 // // footer style 
 
 // footer {

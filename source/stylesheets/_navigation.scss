@@ -6,7 +6,6 @@
 body {
   left: 0;
   margin: 0;
-  overflow: hidden;
   position: relative;
 }
 
@@ -19,18 +18,8 @@ body {
   height: 100%;
   position: fixed;
   top: 0;
-  @include breakpoint($xsmall $small) {
-    left: -100%;
-    width: 100%;
-  }
-  @include breakpoint($small $medium) {
-    left: -60%;
-    width: 60%;
-  }
-  @include breakpoint($medium) {
-    left: -30%;
-    width: 30%;
-  }
+  left: 400px;
+  width: 400px;
 }
 //problem with media queries
 
@@ -110,7 +99,8 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   display: inline;
-  line-height: 3em;
+  line-height: 3.7em;
+  padding: 0;
   text-align: center;
   @include span(3 first);
 }
@@ -122,7 +112,7 @@ body {
   margin: 0;
   text-align: center;
   padding: 0;
-  line-height: 3em;
+  line-height: 3.7em;
   a {
     font-size: 1.4em;
     // padding: 5%;
