@@ -40,49 +40,64 @@
   </head>
   
   <body class="<%= page_classes %>">
-    <header id="top" role="banner">
-<!--       <nav>
-        <ul class="account">
-          <li><a href=""><img src="../icons/user.png" alt=""><span>My Account</span></a></li>
-          <li><a href=""><img src="../icons/shop.png" alt=""><span>My Bag</span></a></li>
-        </ul>
-        <ul class="social-media">
-          <li><a href=""><img src="../icons/fb.png" alt=""></a></img></li>
-          <li><a href=""><img src="../icons/tumbler.png" alt=""></a></img></li>
-          <li><a href=""><img src="../icons/pinterest.png" alt=""></a></img></li>
-          <li><a href=""><img src="../icons/twitter.png" alt=""></a></img></li>
-        </ul>
-        <ul class="menu">
-          <li><a href="ceramics.html">Ceramics</a></li>
-          <li><a href="custom-design.html">Custom Design</a></li>
-          <li><a href="index.html"><img src="../icons/bazaar-logo.png" alt=""></a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul> </nav> -->
-
-    </header>
+    <header id="top" role="banner"> 
+      <!-- learn what is role -->
+    
+    <h1>Bazaar <img src="../icons/bazaar-logo.png" alt=""> Ceramics</h1>
+    
     <div class="menu">
       
       <!-- Menu icon -->
       <div class="icon-close">
-        <img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/close.png">
+        <i class="fa fa-times"></i>
       </div>
 
       <!-- Menu -->
-      <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Help</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+      <div class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ceramics.html">Ceramics</a></li>
+          <li><a href="custom-design.html">Custom Design</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="social-media">  
+        <ul>
+          <li><a href=""><i class="fa fa-facebook-square"></i></a></img></li>
+          <li><a href=""><i class="fa fa-tumblr-square"></i></a></img></li>
+          <li><a href=""><i class="fa fa-pinterest-square"></i></a></img></li>
+          <li><a href=""><i class="fa fa-twitter-square"></i></a></img></li>
+        </ul>
+      </div>
+
+      <div class="sign-in">
+        <ul>
+          <li><a href="#">Sign In</a></li>
+          <li><a href="#">Shopping Cart</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="icon-menu">
+       <i class="fa fa-bars"></i>
+       Menu
     </div>
 
-      <div class="icon-menu">
-        <i class="fa fa-bars"></i>
-        Menu
-      </div>
+    <div class="icon-shopping-cart">
+      <a href="#"><i class="fa fa-shopping-cart"></a></i>
+    </div>
+
+    <div class="icon-user-account">
+      <a href="#"><i class="fa fa-user"></a></i>
+    </div>
       
+   
+    
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    </header>
+    
 
     <main>
       <%= yield %>      

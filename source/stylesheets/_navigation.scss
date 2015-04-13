@@ -1,2 +1,132 @@
 
 
+
+
+/* Initial body */
+body {
+  left: 0;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+
+/* Initial menu */
+.menu {
+  background: $black; //url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/black-thread.png') repeat left top;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  @include breakpoint($xsmall $small) {
+    left: -100%;
+    width: 100%;
+  }
+  @include breakpoint($small $medium) {
+    left: -60%;
+    width: 60%;
+  }
+  @include breakpoint($medium) {
+    left: -30%;
+    width: 30%;
+  }
+}
+//problem with media queries
+
+/* Basic styling */
+
+.main-nav ul {
+  border-top: 1px solid $border-color;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    border-bottom: 1px solid $border-color;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 3em;
+    padding: 1% 5%;
+    a {
+      color: $white;
+      font-size: 1em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.sign-in ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background:  rgba(255, 255, 255, 0.6); 
+  li {
+    border-bottom: 1px solid $border-color;
+    display: inline-block;
+    line-height: 3em;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    
+    a {
+      color: $white;
+      font-size: 1em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+}
+
+//add hover effect
+
+.social-media ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center; //children will be centered.
+
+  li {
+    display: inline-block;
+    margin: 6%;
+    a {
+      font-size: 2em;
+      color: $white;
+    }
+  }
+}
+
+.icon-close {
+  cursor: pointer;
+  font-size: 2em;
+  padding: 4% 5%;
+}
+
+.icon-menu {
+  color: $white;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  // padding: 5%;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline;
+  line-height: 3em;
+  text-align: center;
+  @include span(3 first);
+}
+
+.icon-shopping-cart, .icon-user-account  {
+  display: inline;
+  @include span(3);
+  border-left: 1px solid $border-color;
+  margin: 0;
+  text-align: center;
+  padding: 0;
+  line-height: 3em;
+  a {
+    font-size: 1.4em;
+    // padding: 5%;
+    text-align: right;
+    color: $white;  
+  }
+}

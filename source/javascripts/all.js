@@ -9,14 +9,14 @@ var main = function() {
     }, 200);
 
     $('body').animate({
-      left: "285px"
+      left: "60%"
     }, 200);
   });
 
   /* Then push them back */
   $('.icon-close').click(function() {
     $('.menu').animate({
-      left: "-285px"
+      left: "-60%"
     }, 200);
 
     $('body').animate({
