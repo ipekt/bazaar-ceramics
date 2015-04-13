@@ -11,373 +11,458 @@ $susy: (
 // set border boxing global
 @include global-box-sizing(border-box);
 
-
-// general layout header & footer
 header, footer {
   @include container(100%);
-  padding: 2% 0;
-  font-family: $fontfamily;
-  background-color: $black;
-  color: $white; //doesnt work on its own
+  background: $black;
 }
 
-// general layout main
+// .cbp-spmenu-vertical {
+//   width: 240px;
+//   height: 100%;
+//   top: 0;
+//   z-index: 1000;
+// }
+
+// .cbp-spmenu-vertical a {
+//   border-bottom: 1px solid #258ecd;
+//   padding: 1em;
+// }
+
+// .cbp-spmenu-left {
+//   left: -240px;
+// }
+
+// .cbp-spmenu-left.cbp-spmenu-open {
+//   left: 0px;
+// }
+
+// .cbp-spmenu-push {
+//   overflow-x: hidden;
+//   position: relative;
+//   left: 0;
+// }
+
+// @media screen and (max-height: 26.375em){
+
+//   .cbp-spmenu-vertical {
+//     font-size: 90%;
+//     width: 190px;
+//   }
+
+//   .cbp-spmenu-left,
+//   .cbp-spmenu-push-toleft {
+//     left: -190px;
+//   }
+
+//   .cbp-spmenu-right {
+//     right: -190px;
+//   }
+
+//   .cbp-spmenu-push-toright {
+//     left: 190px;
+//   }
+// }
+// ///////////////////////////////
 
 main {
-  @include container(80%);
-  background-color: $white;
-  padding: 1% 0 2% 0;
-  font-family: $fontfamily;
+  @include container(90%);
 }
 
-//header - main navigation 
-
-header {
-  border-bottom: 5px solid $light-yellow;
-  nav {
-    @include clearfix;
-    .account {
-      // @include span(2);
-      float: right;  
-      clear: both;
-      text-align: justify;
-      text-transform: uppercase;
-      li {
-        display: inline-block;
-        a {
-          color: $white;
-          text-decoration: none;
-          text-align: center;
-          display: inline-block;
-          font-size: 1em;
-          margin-right: 1.25em;
-          margin-bottom: 1em;
-          img {
-            width: 25px;
-            min-width: 20px;
-            display: inline-block;
-            margin-right: 1em;
-          }
-        }
-      }
-    }
-    .social-media {
-      // @include span(2);
-      float: left;
-      padding-left: 2%;
-      li {
-        display: inline-block;
-        a {
-          text-align: right;
-          display: inline-block;
-          img {
-            width: 40px;
-            display: inline-block;
-            margin-right: 0.5em;
-          }
-        }
-      }
-    }
-    .menu {  
-      @include span(9);  // taking whole row this way it is centered
-      text-align: center; 
-      text-transform: uppercase;
-      // @include breakpoint()
-      li {
-        display: inline-block;
-        a {
-          color: $white;
-          text-decoration: none;
-          text-align: center;
-          display: inline-block;
-          font-size: 1.25em;
-          margin-right: 2em;
-          img {
-            width: 40px;
-            display: inline-block;
-            margin-right: 1em;
-          }
-        }
-      }
-    }
-  }
-} 
-
-// design process article
-
-.design-process {
-  @include backImage('../images/ban.jpg');
-  // @include display-flex();  //learn what these do?
-  @include align-items(center);
-  @include justify-content(center);
-  height: 450px;
-  margin: 5% auto;
-  position: relative;
-  h1 {
-    position: absolute;  // make h1 vertically aligned and flexible (parent =>pos:relative child=> pos:absolute top:36%)
-    display: block;
-    top: 36%;
-    color: $white;
-    font-size: 5em;
-    @include text-shadow($black 0 0 20px);
-    text-align: center;
-  }
-  a {
-    color: $white;
-    text-decoration: none;
-  }
+#top .nav-btn {
+  position: absolute;
+  top: 1.5em;
+  left: 1.875em;
+}
+.nav-btn {
+  display: block;
+  width: 2.625em;
+  height: 2.25em;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: #333333 url("../img/nav-icon.svg") left center no-repeat;
+  background-size: 1.875em 1.5em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-// creativity article 
-
-.creativity {
-  height: 350px;
-  img {
-    display: inline-block;
-    @include span(4 of 9);
-    height: 400px;
-  }
-  section {
-    display: inline-block;
-    @include span(5 at 4 of 9 last);
-    background-color: $black;
-    height: 400px;
-    position: relative;
-    h1 {
-      position: absolute;
-      top: 20%;
-      left: 15%;
-      font-size: 3em;
-      text-align: center;
-      color: $white;
-      line-height: 3em;
-    }
-    p {
-      position: absolute;
-      top: 54%;
-      left: 14%;
-      font-size: 1.5em;
-      text-align: center;
-      color: $white;
-      a {
-        color: $yellow;
-      }
-    }
-  }
-}
-
-// product catalog style
-
-.product-catalog {
-  @include container(100%);
-  .product-list-item {
-    @include gallery(3 of 9);
-    @include clearfix;
-    margin-bottom: 1.66%;
-    border: 1px solid grey;
-    img {
-      max-width: 100%;
-    }
-    .product-content {
-      padding: 5%;
-      border-top: 2px solid $light-yellow;
-      .product-name {
-        width: 100%;
-        display: block;
-        text-align: center;
-        color: $black;
-        font-size: 1.4em;
-        margin: 0.5% auto;
-        a {
-          text-decoration: none;
-        }
-      }
-      .product-price {
-        width: 100%;
-        display: block;
-        text-align: center;
-        font-size: 2em;
-        font-style: bold;
-      }
-    }
-  }
-  .button {
-    @include clearfix;
-    @include span(9);
-    text-align: right;
-    clear: both;  //solved position problem
-    margin-top: 2%;
-    margin-bottom: 2%;
-    a {
-      color: $white;
-      text-decoration: none;
-      background-color: $light-yellow;
-      padding: 1%;
-      font-size: 1.2em;
-    }
-  }
+a {
+  text-decoration: none;
 }
 
 
-// footer style 
 
-footer {
-  border-top: 5px solid $light-yellow;
-  padding: 2%;
-  .footer-nav {
-    height: 100%;
-    @include span(first 5 of 9);
-    margin-left: span(1 of 5); 
-    .nav-sections {
-      @include span(1 of 5);
-      height: 175px;
-      h3 {
-        text-transform: uppercase;
-        line-height: 2.5em;
-        ont-size: 1.1em;
-      }
-      a {
-        color: $white;
-        text-decoration: none;
-        text-align: center;
-        line-height: 2em;
-        font-size: 0.9em;
-      }
-    }
-  }
-  .payment {
-    @include span(1 of 9);
-    background-color: $white;
-    float: left;
-    padding-right: 2%;
-    margin-bottom: 2%;
-    img {
-      width: 100%;
-    }
-  }
-  .social-media {
-    @include span(last 2 of 9);
-    float: left;
-    @include clearfix;
-    li {
-      display: inline-block;
-      a {
-        text-align: center;
-        display: inline-block;
-        img {
-          width: 30px;
-          display: inline-block;
-          margin-right: 0.5em;
-        }
-      }
-    }
-  }
 
-  .copyright { // cant get it to bottom.
-    text-align: center;
-    @include span(9);
-    padding-top: 2%;
-  }
-}
+// // general layout header & footer
+// header, footer {
+//   @include container(100%);
+//   padding: 2% 0;
+//   font-family: $fontfamily;
+//   background-color: $black;
+//   color: $white; //doesnt work on its own
+// }
 
-// contact 
+// // general layout main
 
-.contact-us {
-  @include span(first 6);
-  h1{
-    font-size: 2em;
-    color: $purple;
-    line-height: 3em;
-  }
-  p {
+// main {
+//   @include container(80%);
+//   background-color: $white;
+//   padding: 1% 0 2% 0;
+//   font-family: $fontfamily;
+// }
+
+// //header - main navigation 
+
+// header {
+//   border-bottom: 5px solid $light-yellow;
+//   nav {
+//     @include clearfix;
+//     .account {
+//       // @include span(2);
+//       float: right;  
+//       clear: both;
+//       text-align: justify;
+//       text-transform: uppercase;
+//       li {
+//         display: inline-block;
+//         a {
+//           color: $white;
+//           text-decoration: none;
+//           text-align: center;
+//           display: inline-block;
+//           font-size: 1em;
+//           margin-right: 1.25em;
+//           margin-bottom: 1em;
+//           img {
+//             width: 25px;
+//             min-width: 20px;
+//             display: inline-block;
+//             margin-right: 1em;
+//           }
+//         }
+//       }
+//     }
+//     .social-media {
+//       // @include span(2);
+//       float: left;
+//       padding-left: 2%;
+//       li {
+//         display: inline-block;
+//         a {
+//           text-align: right;
+//           display: inline-block;
+//           img {
+//             width: 40px;
+//             display: inline-block;
+//             margin-right: 0.5em;
+//           }
+//         }
+//       }
+//     }
+//     .menu {  
+//       @include span(9);  // taking whole row this way it is centered
+//       text-align: center; 
+//       text-transform: uppercase;
+//       // @include breakpoint()
+//       li {
+//         display: inline-block;
+//         a {
+//           color: $white;
+//           text-decoration: none;
+//           text-align: center;
+//           display: inline-block;
+//           font-size: 1.25em;
+//           margin-right: 2em;
+//           img {
+//             width: 40px;
+//             display: inline-block;
+//             margin-right: 1em;
+//           }
+//         }
+//       }
+//     }
+//   }
+// } 
+
+// // design process article
+
+// .design-process {
+//   @include backImage('../images/ban.jpg');
+//   // @include display-flex();  //learn what these do?
+//   @include align-items(center);
+//   @include justify-content(center);
+//   height: 450px;
+//   margin: 5% auto;
+//   position: relative;
+//   h1 {
+//     position: absolute;  // make h1 vertically aligned and flexible (parent =>pos:relative child=> pos:absolute top:36%)
+//     display: block;
+//     top: 36%;
+//     color: $white;
+//     font-size: 5em;
+//     @include text-shadow($black 0 0 20px);
+//     text-align: center;
+//   }
+//   a {
+//     color: $white;
+//     text-decoration: none;
+//   }
+// }
+
+// // creativity article 
+
+// .creativity {
+//   height: 350px;
+//   img {
+//     display: inline-block;
+//     @include span(4 of 9);
+//     height: 400px;
+//   }
+//   section {
+//     display: inline-block;
+//     @include span(5 at 4 of 9 last);
+//     background-color: $black;
+//     height: 400px;
+//     position: relative;
+//     h1 {
+//       position: absolute;
+//       top: 20%;
+//       left: 15%;
+//       font-size: 3em;
+//       text-align: center;
+//       color: $white;
+//       line-height: 3em;
+//     }
+//     p {
+//       position: absolute;
+//       top: 54%;
+//       left: 14%;
+//       font-size: 1.5em;
+//       text-align: center;
+//       color: $white;
+//       a {
+//         color: $yellow;
+//       }
+//     }
+//   }
+// }
+
+// // product catalog style
+
+// .product-catalog {
+//   @include container(100%);
+//   .product-list-item {
+//     @include gallery(3 of 9);
+//     @include clearfix;
+//     margin-bottom: 1.66%;
+//     border: 1px solid grey;
+//     img {
+//       max-width: 100%;
+//     }
+//     .product-content {
+//       padding: 5%;
+//       border-top: 2px solid $light-yellow;
+//       .product-name {
+//         width: 100%;
+//         display: block;
+//         text-align: center;
+//         color: $black;
+//         font-size: 1.4em;
+//         margin: 0.5% auto;
+//         a {
+//           text-decoration: none;
+//         }
+//       }
+//       .product-price {
+//         width: 100%;
+//         display: block;
+//         text-align: center;
+//         font-size: 2em;
+//         font-style: bold;
+//       }
+//     }
+//   }
+//   .button {
+//     @include clearfix;
+//     @include span(9);
+//     text-align: right;
+//     clear: both;  //solved position problem
+//     margin-top: 2%;
+//     margin-bottom: 2%;
+//     a {
+//       color: $white;
+//       text-decoration: none;
+//       background-color: $light-yellow;
+//       padding: 1%;
+//       font-size: 1.2em;
+//     }
+//   }
+// }
+
+
+// // footer style 
+
+// footer {
+//   border-top: 5px solid $light-yellow;
+//   padding: 2%;
+//   .footer-nav {
+//     height: 100%;
+//     @include span(first 5 of 9);
+//     margin-left: span(1 of 5); 
+//     .nav-sections {
+//       @include span(1 of 5);
+//       height: 175px;
+//       h3 {
+//         text-transform: uppercase;
+//         line-height: 2.5em;
+//         ont-size: 1.1em;
+//       }
+//       a {
+//         color: $white;
+//         text-decoration: none;
+//         text-align: center;
+//         line-height: 2em;
+//         font-size: 0.9em;
+//       }
+//     }
+//   }
+//   .payment {
+//     @include span(1 of 9);
+//     background-color: $white;
+//     float: left;
+//     padding-right: 2%;
+//     margin-bottom: 2%;
+//     img {
+//       width: 100%;
+//     }
+//   }
+//   .social-media {
+//     @include span(last 2 of 9);
+//     float: left;
+//     @include clearfix;
+//     li {
+//       display: inline-block;
+//       a {
+//         text-align: center;
+//         display: inline-block;
+//         img {
+//           width: 30px;
+//           display: inline-block;
+//           margin-right: 0.5em;
+//         }
+//       }
+//     }
+//   }
+
+//   .copyright { // cant get it to bottom.
+//     text-align: center;
+//     @include span(9);
+//     padding-top: 2%;
+//   }
+// }
+
+// // contact 
+
+// .contact-us {
+//   @include span(first 6);
+//   h1{
+//     font-size: 2em;
+//     color: $purple;
+//     line-height: 3em;
+//   }
+//   p {
   
-    font-size: 1.2em;
-    color: $black;
-    line-height: 1.2em;
-  }
-  h2 {
-    font-size: 1.4em;
-    color: $purple;
-    line-height: 1.2em;
-    padding: 2% 0;
-  }
-  address {
-    font-size: 1.2em;
-    color: $black;
-  }
-}
+//     font-size: 1.2em;
+//     color: $black;
+//     line-height: 1.2em;
+//   }
+//   h2 {
+//     font-size: 1.4em;
+//     color: $purple;
+//     line-height: 1.2em;
+//     padding: 2% 0;
+//   }
+//   address {
+//     font-size: 1.2em;
+//     color: $black;
+//   }
+// }
 
-#map-canvas {
-  @include span(last 3);
-  // width: 500px;
-  height: 360px;
-  background-color: #CCC;
-  border: 3px solid $purple;
-  margin-top: 5%;
-}
+// #map-canvas {
+//   @include span(last 3);
+//   // width: 500px;
+//   height: 360px;
+//   background-color: #CCC;
+//   border: 3px solid $purple;
+//   margin-top: 5%;
+// }
     
-form {
-  @include span(5);
-  margin: 5% auto;
-  label {
-    width: 25%;
-    float: left;
-    padding-right: 5%;
-    font-size: 1.2em;
-    // margin: 1% auto;
-  }
-  input[type=text], input[type=email], textarea {
-    width: 100%;
-    border: 1px solid #ccc;
-  }
-}    
+// form {
+//   @include span(5);
+//   margin: 5% auto;
+//   label {
+//     width: 25%;
+//     float: left;
+//     padding-right: 5%;
+//     font-size: 1.2em;
+//     // margin: 1% auto;
+//   }
+//   input[type=text], input[type=email], textarea {
+//     width: 100%;
+//     border: 1px solid #ccc;
+//   }
+// }    
     
-.banner {
-  @include backImage('../images/plates.jpg');
-  @include display-flex();  //learn what these do?
-  @include align-items(center);
-  @include justify-content(center);
-  height: 450px;
-  margin: 5% auto;
-  position: relative;
-  h1 {
-    position: absolute;  // make h1 vertically aligned and flexible (parent =>pos:relative child=> pos:absolute top:36%)
-    display: block;
-    top: 40%;
-    left: 20%;
-    color: $white;
-    font-size: 5em;
-    @include text-shadow($black 0 0 20px);
-    text-align: center;
-  }
-  a {
-    color: $white;
-    text-decoration: none;
-  }
-}
+// .banner {
+//   @include backImage('../images/plates.jpg');
+//   @include display-flex();  //learn what these do?
+//   @include align-items(center);
+//   @include justify-content(center);
+//   height: 450px;
+//   margin: 5% auto;
+//   position: relative;
+//   h1 {
+//     position: absolute;  // make h1 vertically aligned and flexible (parent =>pos:relative child=> pos:absolute top:36%)
+//     display: block;
+//     top: 40%;
+//     left: 20%;
+//     color: $white;
+//     font-size: 5em;
+//     @include text-shadow($black 0 0 20px);
+//     text-align: center;
+//   }
+//   a {
+//     color: $white;
+//     text-decoration: none;
+//   }
+// }
 
-.company {
-  @include span(first 6);
-  margin-left: gutter(1);
-  h1 {
-    font-size: 2em;
-    color: $purple;
-    line-height: 3em;
-  }
-  p {
-    padding: 1% 0;
-    font-size: 1.2em;
-    color: $black;
-    line-height: 1.2em;
-    text-align: justify;
-  }
-  h2 {
-    font-size: 1.4em;
-    color: $purple;
-    line-height: 1.2em;
-    padding: 2% 0;
-  }
-}
-.bazaar {
-  @include span(last 4);
-}
+// .company {
+//   @include span(first 6);
+//   margin-left: gutter(1);
+//   h1 {
+//     font-size: 2em;
+//     color: $purple;
+//     line-height: 3em;
+//   }
+//   p {
+//     padding: 1% 0;
+//     font-size: 1.2em;
+//     color: $black;
+//     line-height: 1.2em;
+//     text-align: justify;
+//   }
+//   h2 {
+//     font-size: 1.4em;
+//     color: $purple;
+//     line-height: 1.2em;
+//     padding: 2% 0;
+//   }
+// }
+// .bazaar {
+//   @include span(last 4);
+// }

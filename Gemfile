@@ -18,3 +18,7 @@ gem 'susy', '~> 2.2.2'
 
 # Add breakpoint library
 gem 'breakpoint', '~> 2.5.0'
+
+# Add JQuery
+
+# gem 'middleman-jquery', '~> 2.1.1'

@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
@@ -10,7 +11,10 @@
     <title><%= current_page.data.title || "Bazaar Ceramics" %></title>
     
       <%= stylesheet_link_tag "style" %> 
-   <!--  <%= javascript_include_tag  "all" %> -->
+      <%= javascript_include_tag  "all" %> 
+   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400;300' rel='stylesheet' type='text/css'>
+
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script>
       function initialize() {
@@ -36,9 +40,8 @@
   </head>
   
   <body class="<%= page_classes %>">
-    <header>
-      <!-- <h1><a href="index.html"><img src="../icons/bazaar-logo.png" alt=""></a></h1> -->
-      <nav>
+    <header id="top" role="banner">
+<!--       <nav>
         <ul class="account">
           <li><a href=""><img src="../icons/user.png" alt=""><span>My Account</span></a></li>
           <li><a href=""><img src="../icons/shop.png" alt=""><span>My Bag</span></a></li>
@@ -50,20 +53,37 @@
           <li><a href=""><img src="../icons/twitter.png" alt=""></a></img></li>
         </ul>
         <ul class="menu">
-          <!-- <li><a href="index.html">Home</a></li> -->
           <li><a href="ceramics.html">Ceramics</a></li>
           <li><a href="custom-design.html">Custom Design</a></li>
           <li><a href="index.html"><img src="../icons/bazaar-logo.png" alt=""></a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
+        </ul> </nav> -->
+
     </header>
-    <!-- Special to main page -->
-<!--     <article class="banner" height="375px">
-      <h1>Bazaar Ceramics</h1>
-    </article>
-    <h2></h2> -->
+    <div class="menu">
+      
+      <!-- Menu icon -->
+      <div class="icon-close">
+        <img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/close.png">
+      </div>
+
+      <!-- Menu -->
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+      <div class="icon-menu">
+        <i class="fa fa-bars"></i>
+        Menu
+      </div>
+      
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
     <main>
       <%= yield %>      
     </main>

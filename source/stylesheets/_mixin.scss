@@ -37,6 +37,15 @@
   background-size: cover;
 } //backImage
 
+// background-color: white;
+// background-image: url(logo.gif);
+// background-position: 50% 50%;
+// background-repeat: no-repeat;
+// background-attachment: fixed;
+
+
+
+
 @mixin box-sizing($value) {
 -moz-box-sizing: $value;
 box-sizing: $value;
