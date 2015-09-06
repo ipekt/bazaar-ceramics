@@ -1,5 +1,6 @@
 # bazaar-ceramics
 TAFE Project: Redesigning e-commerce site (static only)
+
 source: http://www.bazaar.martintw.com/default.php
 report: https://technicalreport.wordpress.com/about/bazaar-ceramics-client-proposal/introduction/
 
